@@ -66,6 +66,16 @@ a:hover {
   width: 60%;
 }
 
+#title,
+#startButton,
+#tracks {
+  -webkit-transition: opacity 0.6s ease-in-out;
+  -moz-transition: opacity 0.6s ease-in-out;
+  -ms-transition: opacity 0.6s ease-in-out;
+  -o-transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.6 ease-in-out;
+}
+
 #startButton {
   font-family: "Oswald", sans-serif;
   position: absolute;
@@ -78,7 +88,31 @@ a:hover {
   width: 40%;
 }
 
-#ports {
+.fadeOut {
+  opacity: 0;
+}
+
+#tracks {
+  position: absolute;
+  top: 58%;
+  width: 640px;
+  height: 8px;
+  overflow-x: auto;
+}
+
+#train {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+
+#platform {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+}
+
+/* #ports {
   margin-top: 96px;
   display: flex;
   justify-content: space-around;
@@ -155,4 +189,4 @@ a:hover {
   background-color: rgb(171, 15, 4);
   color: #fff;
   text-align: center;
-}
+} */
