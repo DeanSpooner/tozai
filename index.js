@@ -10,6 +10,12 @@ train.src = 'images/train.png';
 let platform = document.createElement('img');
 platform.id = 'platform';
 platform.src = 'images/platform.png';
+let goButton = document.createElement('button');
+goButton.id = 'goButton';
+goButton.textContent = 'GO!';
+let backButton = document.createElement('button');
+backButton.id = 'backButton';
+backButton.textContent = 'BACK!'
 
 swapElements = () => {
     title.classList.toggle('fadeOut');
@@ -21,6 +27,8 @@ swapElements = () => {
     viewport.appendChild(tracks);
     viewport.appendChild(platform);
     viewport.appendChild(train);
+    viewport.appendChild(goButton);
+    viewport.appendChild(backButton);
 }
 
 

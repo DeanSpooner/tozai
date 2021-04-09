@@ -77,8 +77,6 @@ a:hover {
 }
 
 #startButton {
-  font-family: "Oswald", sans-serif;
-  position: absolute;
   left: 30%;
   top: 75%;
   background-color: #ffcc00;
@@ -110,6 +108,35 @@ a:hover {
   position: absolute;
   top: 30%;
   left: 40%;
+}
+
+#startButton,
+#goButton,
+#backButton {
+  font-family: "Oswald", sans-serif;
+  position: absolute;
+  bottom: 0;
+}
+
+#goButton {
+  background-color: #289f00;
+  border: solid #186100;
+  color: #fff;
+  right: 0;
+}
+
+#backButton {
+  background-color: #b00000;
+  border: solid #790000;
+  color: #fff;
+  left: 0;
+}
+
+#goButton,
+#backButton {
+  border-width: 0px 5px 5px 0px;
+  width: 50%;
+  height: 30%;
 }
 
 /* #ports {
