@@ -1,0 +1,22 @@
+{
+  "name": "tozai-sen",
+  "version": "1.0.0",
+  "description": "A Tokyo Metro simulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeanSpooner/tozai.git"
+  },
+  "author": "Dean Spooner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeanSpooner/tozai/issues"
+  },
+  "homepage": "https://github.com/DeanSpooner/tozai#readme",
+  "dependencies": {
+    "jest": "^26.6.3"
+  }
+}
