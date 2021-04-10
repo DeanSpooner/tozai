@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  color: #fff;
 }
 
 html,
@@ -49,6 +50,25 @@ a:hover {
   color: #617ca2;
 }
 
+#mute {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #ffcc00;
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: 5px solid #dc7200;
+  width: 64px;
+  height: 64px;
+}
+.on {
+  background-image: url("../images/volume.png");
+}
+
+.off {
+  background-image: url("../images/mute.png");
+}
+
 #viewport {
   height: 256px;
   width: 640px;
@@ -80,6 +100,7 @@ a:hover {
   top: 75%;
   background-color: #ffcc00;
   border: solid 5px #dc7200;
+  color: #000;
   height: 20%;
   width: 40%;
 }
@@ -166,4 +187,8 @@ a:hover {
 #backButton {
   width: 50%;
   height: 30%;
+}
+
+#jingle {
+  display: none;
 }

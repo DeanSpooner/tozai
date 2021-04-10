@@ -28,6 +28,10 @@ backButton.classList = 'main';
 let info = document.createElement('div');
 info.id = 'info';
 info.classList = 'main';
+const jingle = new Audio('sounds/jingle.mp3');
+const arrivalSound = new Audio('sounds/arrivalSound.mp3');
+const trainMove = new Audio('sounds/trainMove.mp3');
+let muteButton = document.getElementById('mute');
 
 let currentPlatform = 0;
 
@@ -126,8 +130,9 @@ const stations = [{
 ]
 
 swapElements = () => {
-    //     title.classList.toggle('fadeOut');
-    //     button.classList.toggle('fadeOut');
+    if (isMute === false) {
+        jingle.play();
+    }
     $(title).fadeOut(600);
     $(button).fadeOut(600);
     setTimeout(function () {
@@ -149,7 +154,9 @@ goForward = () => {
     if (currentPlatform === 22) {
         $(info).text('Cannot go further forward! もっとす進むことができません！');
     } else {
-        $(info).fadeOut(500).delay(2000);
+        if (isMute === false) {
+            trainMove.play();
+        }
         $(platform).animate({ left: '-160px' }, 2000);
         $(platform).hide().animate({ left: '100%' }, 0);
         $(platform).show().animate({ left: '40%' }, 2000);
@@ -162,10 +169,27 @@ goBack = () => {
     if (currentPlatform === 0) {
         $(info).text('Cannot go further back! もっと逆行することできません！');
     } else {
+        if (isMute === false) {
+            arrivalSound.play();
+        }
         $(platform).animate({ left: '100%' }, 2000);
         $(platform).hide().animate({ left: '-160px' }, 0);
         $(platform).show().animate({ left: '40%' }, 2000);
         currentPlatform -= 1;
+        $(info).text('This is station T' + (currentPlatform + 1) + ', ' + stations[currentPlatform].name + '. これは' + stations[currentPlatform].jpName + '駅 T' + (currentPlatform + 1) + ' です。').fadeIn(500);
+
+    }
+}
+
+let isMute = false;
+
+muteFunc = () => {
+    if (isMute === false) {
+        muteButton.classList = 'off';
+        isMute = true;
+    } else if (isMute === true) {
+        muteButton.classList = 'on';
+        isMute = false;
     }
 }
 
@@ -174,3 +198,5 @@ button.addEventListener("click", swapElements);
 goButton.addEventListener('click', goForward);
 
 backButton.addEventListener('click', goBack);
+
+muteButton.addEventListener('click', muteFunc);
