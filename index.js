@@ -22,6 +22,8 @@ backButton.id = 'backButton';
 backButton.textContent = 'BACK!';
 backButton.classList = 'main';
 
+let currentPlatform = 0;
+
 swapElements = () => {
     //     title.classList.toggle('fadeOut');
     //     button.classList.toggle('fadeOut');
@@ -39,4 +41,30 @@ swapElements = () => {
     }, 600);
 }
 
+goForward = () => {
+    if (currentPlatform === 19) {
+        console.log('Cannot go further forward!');
+    } else {
+        $(platform).animate({ left: '-160px' }, 2000);
+        $(platform).hide().animate({ left: '100%' }, 0);
+        $(platform).show().animate({ left: '40%' }, 2000);
+        currentPlatform += 1;
+    }
+}
+
+goBack = () => {
+    if (currentPlatform === 0) {
+        console.log('Cannot go further back!');
+    } else {
+        $(platform).animate({ left: '100%' }, 2000);
+        $(platform).hide().animate({ left: '-160px' }, 0);
+        $(platform).show().animate({ left: '40%' }, 2000);
+        currentPlatform -= 1;
+    }
+}
+
 button.addEventListener("click", swapElements);
+
+goButton.addEventListener('click', goForward);
+
+backButton.addEventListener('click', goBack);
