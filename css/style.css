@@ -66,7 +66,7 @@ a:hover {
   width: 60%;
 }
 
-#title,
+/* #title,
 #startButton,
 #tracks {
   -webkit-transition: opacity 0.6s ease-in-out;
@@ -74,7 +74,7 @@ a:hover {
   -ms-transition: opacity 0.6s ease-in-out;
   -o-transition: opacity 0.6s ease-in-out;
   transition: opacity 0.6 ease-in-out;
-}
+} */
 
 #startButton {
   left: 30%;
